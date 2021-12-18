@@ -1,0 +1,221 @@
+@charset "utf-8";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+
+@media screen and (min-width: 770px){
+
+  #navArea{
+    display: none !important;
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+  
+
+  body {
+    font-size: 30px;
+  }
+
+  header {
+    display: none;
+  }
+
+  .top-container {
+    width: 100vw;
+  }
+
+  .self-container,
+  .happy-container,
+  .life-container,
+  .love-container,
+  .writing-container {
+    width: 100%;
+    background-position: 50% 70%;
+
+  }
+
+  .words-wrapper {
+    padding: 20px;
+  }
+
+  .words-wrapper ul li {
+    width: 15%;
+    padding: 0 10px;
+  }
+
+  .words-wrapper ul li p {
+    bottom: 100px;
+  }
+
+  .writing-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .word-writing {
+    line-height: 13px;
+    height: 80%;
+  }
+
+  .remove {
+    display: none;
+  }
+
+  .back a::before {
+    content: '';
+  }
+
+  .back {
+    bottom: 100px;
+  }
+
+}
+
+
+/*============
+.hamberger
+=============*/
+.hamberger {
+  display: block;
+  position: fixed;
+  width: 50%;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(172, 153, 123, 0.7);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: all .5s;
+  z-index: 0;
+  opacity: 0;
+  visibility:hidden;
+}
+
+.open.hamberger {
+  left: 0;
+  opacity: 1;
+  z-index: 3;
+  visibility:visible;
+}
+
+ .hamberger {
+  padding: 25px;
+  text-align: center;
+
+}
+
+ .hamberger ul {
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+}
+ .hamberger ul li {
+  position: relative;
+  margin: 0;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.hamberger ul li a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  transition-duration: 0.2s;
+  border-bottom: 1px solid #333;
+  padding: 10px;
+}
+
+ .hamberger ul li a:hover {
+  background: #e4e4e4;
+}
+
+/*============
+.toggle_btn
+=============*/
+.toggle_btn {
+  display: block;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  transition: all .5s;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.toggle_btn span {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 4px;
+  transition: all .5s;
+}
+
+.toggle_btn span:nth-child(1) {
+  top: 4px;
+}
+
+.toggle_btn span:nth-child(2) {
+  top: 14px;
+}
+
+.toggle_btn span:nth-child(3) {
+  bottom: 4px;
+}
+
+.open_btn span {
+  background-color: #333;
+}
+
+.open_btn span:nth-child(1) {
+  -webkit-transform: translateY(10px) rotate(-315deg);
+  transform: translateY(10px) rotate(-315deg);
+}
+
+.open_btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.open_btn span:nth-child(3) {
+  -webkit-transform: translateY(-10px) rotate(315deg);
+  transform: translateY(-10px) rotate(315deg);
+}
+
+/*============
+#mask
+=============*/
+#mask {
+  display: none;
+  transition: all .5s;
+}
+#mask .open {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .8;
+  z-index: 10;
+  cursor: pointer;
+}

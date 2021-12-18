@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="top.css">
+  <link rel="stylesheet" href="menu.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+  <title>DB</title>
+</head>
+ 
+<body>
+    <div class="container" style="margin-top:20px;">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">title</th>                
+                    <th scope="col">writing</th>                
+                </tr>
+            </thead>
+            <tbody>
+            <% for(let i in content) { %>
+            <tr>
+                <% let obj = content[i]; %>
+                <th>
+                    <%- obj.id %>
+                </th>
+                <th>
+                    <%- obj.title %>
+                </th>
+                <th>
+                    <%- obj.writing %>
+                </th>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

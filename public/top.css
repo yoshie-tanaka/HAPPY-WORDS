@@ -1,0 +1,176 @@
+@charset "utf-8";
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  *:focus {
+    outline: none;
+  }
+
+html {
+  margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body{
+    color: rgb(68, 67, 67);
+    font-family: 'ほのか新明朝', "HGS明朝E", "serif";
+    font-size: 50px;
+    width:100vw;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+}
+
+
+ul {
+  list-style-type: none;
+  text-decoration: none;
+
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  text-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  cursor:pointer;
+
+}
+
+a:hover {
+  text-shadow: none;
+  transition: 1s;
+}
+
+main {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ------------ヘッダー------------ */
+
+
+header {
+  padding-top: 80px;
+  width: 20%;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.list ul li {
+  display: block;
+  padding: 40px 0 10px 0;
+  font-size: 0.6em;
+  border-bottom: 1px solid rgb(46, 45, 45);
+}
+
+.top-container {
+  background-image: url('top.jpg');
+  background-size: cover;
+  background-color: rgb(255, 255, 255, 0.5);
+  background-blend-mode:lighten;
+  width: 80%;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-container h1 {
+  font-size: 1em;
+  line-height: 1.5em;
+  letter-spacing: 0.3em;
+}
+
+
+/* ------かっこ------ */
+.top-wrapper {
+  position: relative;
+  padding:0.25em 1em;
+}
+.top-wrapper:before,
+.top-wrapper:after { 
+  content:'';
+  width: 20px;
+  height: 30px;
+  position: absolute;
+  display: inline-block;
+}
+
+.top-wrapper:before {
+  border-right: solid 2px #393d58;
+  border-top: solid 2px #393d58;
+  top:0;
+  right: 0;
+}
+
+.top-wrapper:after {
+  border-left: solid 2px #393d58;
+  border-bottom: solid 2px #393d58;
+  bottom:0;
+  left: 0;
+}
+
+.top-wrapper h1 {
+  margin: 0; 
+  padding: 0;
+}
+
+
+/* --------テキストアニメーション------ */
+
+@keyframes showTextFromTop {
+  0% {
+    opacity: 0;
+      /* 上からふわっと */
+    transform: translateY(-20px);
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.textAnimation span {
+  display: inline-block;
+}
+
+/* backwordsを指定するとopacity0がきく 奇数の数のテキストは上からふわっと*/
+.textAnimation span {
+  animation: showTextFromTop 3s backwards;
+}
+
+
+/* -----------------db------------ */
+
+.table {
+  font-size: 0.4em;
+}
+
+th {
+  white-space: pre-wrap;
+}
+
+.db-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8em;
+}
+
+.db-container a {
+  margin: 30px;
+}

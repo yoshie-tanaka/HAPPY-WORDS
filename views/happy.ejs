@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="top.css">
+  <link rel="stylesheet" href="menu.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
+  <script src="top.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+  <title>幸</title>
+</head>
+
+<body>
+
+  <main>
+    <%- include('header') %>
+
+    <div class="happy-container">
+      <article class="menu-title"><h1>喜</h1></article>
+
+      <ariticle class="words-wrapper">
+        <ul>
+          <% happy.forEach((happy) => { %>
+            <li>
+              <a href="/happywriting/<%= happy.id %>">
+                <h2 class="words-title textAnimation"><%= happy.title %></h2>
+                <p class="textAnimation">・・・・・・・・read</p>
+              </a>
+            </li>
+          <% }) %>
+        </ul>
+      </ariticle>
+      
+    </div>
+
+  </main>
+ 
+</body>
+
+</html>
